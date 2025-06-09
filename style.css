@@ -1,0 +1,106 @@
+/* 1. 기본 초기화 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 2. 전체 화면 커버 */
+.full-screen {
+  height: 100vh;
+  background: url('cover.png') center/cover no-repeat;
+  /* ↑ 같은 폴더라면 파일명만, 다른 폴더라면 images/cover.jpg 등 상대경로로 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* 3. 텍스트 스타일 */
+.full-screen h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.3em;
+}
+.full-screen p {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* 4. 인트로 */
+.intro {
+  padding: 40px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.intro h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+.intro p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+/* 갤러리 전체 영역 스타일 (선택 사항) */
+.gallery-section {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 3열 Grid 설정 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3등분 */
+  gap: 16px;                              /* 아이템 간 간격 */
+  max-width: 1200px;                      /* 컨테이너 최대 폭 지정 (선택) */
+  margin: 0 auto;                         /* 가운데 정렬 */
+}
+
+/* 이미지 스타일 */
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 5. 하단 고정 메뉴 */
+.quick-menu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+.quick-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
